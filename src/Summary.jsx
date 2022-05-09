@@ -2,11 +2,11 @@ import React from 'react'
 
 function Summary(props) {
   
-  function createMarkup() {
+  function createHtml() {
     return {__html: `${props.summary}`};
   }
   return (
-    <div dangerouslySetInnerHTML={createMarkup()} />
+    <div dangerouslySetInnerHTML={createHtml()} className='summary'/>
   )
 }
 

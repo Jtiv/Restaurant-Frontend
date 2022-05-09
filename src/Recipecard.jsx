@@ -8,16 +8,14 @@ import Summary from "./Summary.jsx";
 //functional react component
 const Recipecard = (props) => {
 
-  const [recipe, setRecipe] = useState('');
+  //const [recipe, setRecipe] = useState('');
 
   return (
     <div>
-      <h1>{props.recipe.title}</h1>
-      <Ingredients Ingredients={props.recipe.Ingredients} />
+      <Ingredients serving={props.recipe.servings} ingredients={props.recipe.extendedIngredients} />
       <Timer time={props.recipe.readyInMinutes} />
-      <Topsection serving={props.recipe.serving} />
+      <Topsection title={props.recipe.title} image={props.recipe.iamge} />
       <Summary summary={props.recipe.summary}/>
-
     </div>
   )
 }

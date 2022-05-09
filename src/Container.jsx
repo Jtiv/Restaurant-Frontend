@@ -4,7 +4,7 @@ import axios from "axios";
 import Recipecard from './Recipecard';
 
 
-function Container(props){
+function Container(){
 
   const [recipes, setRecipes] = useState([{}]);
 
@@ -24,8 +24,8 @@ function Container(props){
   return (
     <div>Container
        <div className='Recipecard'>
-        {recipes.map((recipe) => (
-          <Recipecard recipe={recipe} />
+        {recipes.map((recipe, i) => (
+          <Recipecard key={i} recipe={recipe} />
         ))}
         </div>
     </div>
