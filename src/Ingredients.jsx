@@ -1,14 +1,28 @@
 import React, { useState , useEffect } from 'react';
-import IngredientSingle from './IngredientSingle.jsx';
+//import IngredientSingle from './IngredientSingle.jsx';
 
 function Ingredients(props) {
-  console.log(props)
+
+  const [ingState, setIngState] = useState([])
+  
+  
+
+  useEffect((props) => {
+
+    //site does not load if request doesn't initally have data. Nullcheck (!props) is a bandaid. 
+    //site renders extremely inconsistantly. Requires two rerenders to fully render data. Not sure if async issue or what
+    if (!!props) {
+      console.log(props.ingredients)
+      setIngState(props.ingredients)
+    }
+
+  },[props])
 
   return (
-    <div>
+    <div className='ingredients'>
       <p>{props.serving}</p>
       <ul>
-        {props.ingredients.map((ingredient, i) => (
+        {ingState.map((ingredient, i) => (
        <li key={i}>{ingredient.name}</li>
      ))}
       </ul>

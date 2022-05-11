@@ -1,5 +1,5 @@
 //imports
-import { useState, useEffect } from "react";
+//import { useState, useEffect } from "react";
 import Ingredients from "./Ingredients.jsx";
 import Timer from "./Timer.jsx";
 import Topsection from "./Topsection.jsx";
@@ -11,7 +11,7 @@ const Recipecard = (props) => {
   //const [recipe, setRecipe] = useState('');
 
   return (
-    <div>
+    <div className="recipeCard">
       <Ingredients serving={props.recipe.servings} ingredients={props.recipe.extendedIngredients} />
       <Timer time={props.recipe.readyInMinutes} />
       <Topsection title={props.recipe.title} image={props.recipe.iamge} />

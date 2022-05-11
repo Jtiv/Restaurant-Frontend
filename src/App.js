@@ -1,13 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
 import Container from './Container';
+import React from 'react';
 
 function App() {
   
   return (
     <div className="App">
-    <Container/>
-    </div>
+      <React.StrictMode>
+        <Container/>
+      </React.StrictMode>
+      </div>
   );
 }
 
